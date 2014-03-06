@@ -3,8 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Client name</th>
-      <th>Client balance</th>
+      <th>Client</th>
+      <th>Description</th>
       <th>Active</th>
       <th></th>
       <th></th>
@@ -15,8 +15,8 @@
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.client_name %></td>
-        <td><%= client.client_balance %></td>
+        <td><%= client.client %></td>
+        <td><%= client.description %></td>
         <td><%= client.active %></td>
         <td><%= link_to 'Show', client %></td>
         <td><%= link_to 'Edit', edit_client_path(client) %></td>

@@ -4,8 +4,10 @@ one:
   client: MyString
   description: MyString
   active: false
+  value: 1.5
 
 two:
   client: MyString
   description: MyString
   active: false
+  value: 1.5

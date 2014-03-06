@@ -1,0 +1,29 @@
+
+<div class="jumbotron center" >
+  <%= render 'pages/accounts_header' %>
+  <%= yield %>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Guthy|Renker Clients</div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <tr>
+          <th>Client Name</th>
+          <th>Description</th>
+           <th>Activity</th>
+        </tr>
+        <% @clients.each do |c| %>
+        <tr>
+          <td><%= link_to c.client, edit_client_path(c.id)  %></td>
+          <td><%= c.description %></td>
+
+          <td><%= c.active %></td>
+        </tr>
+        <% end %>
+
+      </table>
+    </div>
+
+
+  </div>
+</div>

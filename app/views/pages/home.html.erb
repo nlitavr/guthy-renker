@@ -3,7 +3,7 @@
 <% if user_signed_in? %>
 <div class="jumbotron center" >
    <h2>Welcome to Guthy|Renker Automation Center</h2>
-  <%= render 'pages/accounts' %>
+  <%= render 'clients/clients', locals: { clients: @clients} %>
   <%= yield %>
 
 
@@ -16,4 +16,5 @@
       <%= link_to "Sign Up", new_user_registration_path , class: "btn btn-primary btn-lg" %>
 </div>
      <% end %>
+
 </html>
