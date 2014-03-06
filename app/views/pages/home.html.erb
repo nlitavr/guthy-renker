@@ -1,10 +1,19 @@
+<html>
+
+<% if user_signed_in? %>
 <div class="jumbotron center" >
-  <h1>Welcome to Pinteresting!</h1>
-     <% if user_signed_in? %>
+   <h2>Welcome to Guthy|Renker Automation Center</h2>
+  <%= render 'pages/accounts' %>
+  <%= yield %>
 
+
+
+</div>
      <% else %>
-
+<div class="jumbotron center" >
+      <h2>Please sign in for Automation</h2>
       <%= link_to "Log In", new_user_session_path, class: "btn btn-info" %>
       <%= link_to "Sign Up", new_user_registration_path , class: "btn btn-primary btn-lg" %>
-     <% end %>
 </div>
+     <% end %>
+</html>
