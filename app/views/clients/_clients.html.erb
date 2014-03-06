@@ -10,14 +10,17 @@
         <tr>
           <th>Client Name</th>
           <th>Description</th>
-           <th>Activity</th>
+          <th>Activity</th>
         </tr>
         <% @clients.each do |c| %>
         <tr>
           <td><%= link_to c.client, edit_client_path(c.id)  %></td>
           <td><%= c.description %></td>
-
-          <td><%= c.active %></td>
+        <% if c.active? %>
+        <td> Active </td>
+        <% else %>
+        <td> In-Active </td>
+        <% end %>
         </tr>
         <% end %>
 

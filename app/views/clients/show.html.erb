@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="panel-body">
+  <p id="notice"><%= notice %></p>
 
-<p>
+ <div class="form-group">
+
   <strong>Client:</strong>
   <%= @client.client %>
-</p>
+</div>
 
 <p>
   <strong>Description:</strong>
@@ -16,4 +18,9 @@
 </p>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Back', clients_path %> |
+<%= link_to 'Delete', client_path(@client), :data => { :confirm => "Are you sure?"}, :method => :destroy %>
+</div>
+
+<%= render 'accounts/accounts' %>
+<%= yield %>
