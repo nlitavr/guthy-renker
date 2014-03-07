@@ -4,8 +4,9 @@ Pinteresting::Application.routes.draw do
   resources :clients
 
   devise_for :users do
-    delete "session#destroy"
+    get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
   root "pages#home"
   get "about" => "pages#about" # creates about_path
 

@@ -23,11 +23,7 @@
 
               <% else %>
                   <td> In-Active </td>
-                  <td>
-                    <button type="button" class="btn btn-default btn-sm">
-                      <span class="glyphicon glyphicon-minus"></span>
-                    </button>
-                  </td>
+                  <th><%= button_to 'Delete', c, method: :delete %></th>
               <% end %>
             </tr>
         <% end %>

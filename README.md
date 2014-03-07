@@ -1,6 +1,6 @@
-# One Month Rails
+# Guthy | Renker 'mock' Automated system
 
-This is the pinteresting sample application for
-[*One Month Rails*](http://onemonthrails.com)
+This is the automated system for an ecommerce site I created, it has no affiliation with Guthy | Renker or any of their Clients. Just an open source Project.
+[*Guthy | Renker*](http://www.guthy-renker.com/our-story/)
 
-by [Nikolai Litavr](https://www.facebook.com/nikolai.litavr)
+by [Nikolai Litavr](https://github.com/nlitavr)
