@@ -1,7 +1,7 @@
 class CreateAccounts < ActiveRecord::Migration
   def change
     create_table :accounts do |t|
-      t.string :client
+      t.string :name
       t.string :description
       t.boolean :active
       t.float :value

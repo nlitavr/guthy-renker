@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140306200803) do
 
   create_table "accounts", force: true do |t|
-    t.string   "client"
+    t.string   "name"
     t.string   "description"
     t.boolean  "active"
     t.float    "value"

@@ -1,7 +1,5 @@
 
 <div class="jumbotron center" >
-  <%= render 'pages/accounts_header' %>
-  <%= yield %>
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">Guthy|Renker Clients</div>
@@ -18,6 +16,11 @@
           <td><%= c.description %></td>
         <% if c.active? %>
         <td> Active </td>
+        <td>
+          <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </td>
         <% else %>
         <td> In-Active </td>
         <% end %>
