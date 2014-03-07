@@ -1,24 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
 
-<p>
-  <strong>Client:</strong>
-  <%= @account.client %>
-</p>
+      <div class="form-group">
+        <strong>Client:</strong>
+        <%= @account.name %>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @account.description %>
-</p>
+      <div class="form-group">
+        <strong>Description:</strong>
+        <%= @account.description %>
+      </div>
 
-<p>
-  <strong>Active:</strong>
-  <%= @account.active %>
-</p>
+      <% if @account.active? %>
+      <div class="form-group">
+        <strong>Activity:</strong><span> This Account is currently Active<span>
+      </div>
 
-<p>
-  <strong>Value:</strong>
-  <%= @account.value %>
-</p>
+      <% else %>
+      <div class="form-group">
+        <strong>Activity: This Account is currently in-Active</strong>
+      </div>
+
+      <% end %>
+      <div class="form-group">
+        <strong>Account Value:</strong>
+        <%= @account.value %>
+      </div>
+
 
 <%= link_to 'Edit', edit_account_path(@account) %> |
 <%= link_to 'Back', accounts_path %>
+    </div>
+   </div>
+ </div>

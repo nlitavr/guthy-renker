@@ -1,43 +1,40 @@
 
 <div class="jumbotron center" >
   <div class="panel panel-default">
-    <%= link_to 'New Account', new_account_path(:client_id => @client.id )  %>
-     <div class="panel-heading"><% @client[:client] %></div>
+    <!-- Default panel contents -->
+    <div class="panel-heading"><%= link_to 'New Account', new_account_path(:client_id => @client.id ) %></div>
     <div class="panel-body">
       <table class="table table-hover">
-       <tr>
-        <th>Account Name</th>
-        <th>Description</th>
-        <th>Activity</th>
-       </tr>
-        <%= @client.accounts.each do |c| %>
+        <tr>
+          <th>Acount Name</th>
+          <th>Description</th>
+          <th>Activity</th>
+          <th><span class="glyphicon glyphicon-remove"></span>
+          </th>
+        </tr>
+        <% @client.accounts.each  do |c| %>
             <tr>
-              <td><%= link_to c.name, edit_client_path(c.id)  %></td>
+              <td><%= link_to c.name, edit_account_path(c.id)  %></td>
               <td><%= c.description %></td>
               <% if c.active? %>
                   <td> Active </td>
-                  <td>
-                    <button type="button" class="btn btn-default btn-sm">
-                      <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                  </td>
+                  <th><%= button_to 'Delete', c, method: :delete %></th>
+
+
               <% else %>
                   <td> In-Active </td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                  </td>
               <% end %>
             </tr>
         <% end %>
 
-
       </table>
     </div>
 
-    <!-- List group -->
-    <ul class="list-group">
-      <!--<li class="list-group-item">Cras justo odio</li>-->
-      <!--<li class="list-group-item">Dapibus ac facilisis in</li>-->
-      <!--<li class="list-group-item">Morbi leo risus</li>-->
-      <!--<li class="list-group-item">Porta ac consectetur ac</li>-->
-      <!--<li class="list-group-item">Vestibulum at eros</li>-->
-    </ul>
+
   </div>
 </div>

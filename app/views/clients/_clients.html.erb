@@ -1,5 +1,5 @@
 
-<div class="jumbotron center" >
+<div class="jumbotron center">
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">Guthy|Renker Clients</div>
@@ -9,22 +9,20 @@
           <th>Client Name</th>
           <th>Description</th>
           <th>Activity</th>
+          <th><span class="glyphicon glyphicon-remove"></span>
+          </th>
         </tr>
         <% @clients.each do |c| %>
-        <tr>
-          <td><%= link_to c.client, edit_client_path(c.id)  %></td>
-          <td><%= c.description %></td>
-        <% if c.active? %>
-        <td> Active </td>
-        <td>
-          <button type="button" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </td>
-        <% else %>
-        <td> In-Active </td>
-        <% end %>
-        </tr>
+            <tr>
+              <td><%= link_to c.client, edit_client_path(c.id) %></td>
+              <td><%= c.description %></td>
+              <% if c.active? %>
+                  <td> Active</td>
+              <% else %>
+                  <td> In-Active</td>
+              <% end %>
+              <th><%= button_to 'Delete', c, method: :delete %></th>
+            </tr>
         <% end %>
 
       </table>
