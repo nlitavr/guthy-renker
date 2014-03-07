@@ -1,7 +1,7 @@
 
 <div class="jumbotron center" >
   <div class="panel panel-default">
-    <%= link_to 'New Account', new_account_path  %>
+    <%= link_to 'New Account', new_account_path(:client_id => @client.id )  %>
      <div class="panel-heading"><% @client[:client] %></div>
     <div class="panel-body">
       <table class="table table-hover">
@@ -9,7 +9,23 @@
         <th>Account Name</th>
         <th>Description</th>
         <th>Activity</th>
-
+       </tr>
+        <%= @client.accounts.each do |c| %>
+            <tr>
+              <td><%= link_to c.name, edit_client_path(c.id)  %></td>
+              <td><%= c.description %></td>
+              <% if c.active? %>
+                  <td> Active </td>
+                  <td>
+                    <button type="button" class="btn btn-default btn-sm">
+                      <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                  </td>
+              <% else %>
+                  <td> In-Active </td>
+              <% end %>
+            </tr>
+        <% end %>
 
 
       </table>

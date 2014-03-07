@@ -22,5 +22,5 @@
 <%= link_to 'Delete' , client_path(@client),  method: :delete %>
 </div>
 
-<%= render 'accounts/accounts', locals: { accounts: @client.accounts}%>
+<%= render 'accounts/accounts' %>
 <%= yield %>
